@@ -16,6 +16,8 @@ import { useRoastForm } from "@/app/hooks/useRoastForm";
 import { handleFormErrors } from "@/utils";
 import { ResumeUpload } from "./ResumeUpload";
 import { roastResume } from "@/app/actions/roast";
+import { useRouter } from "next/navigation";
+import { useRoastStore } from "@/store/roastStore";
 
 const SARCASM_STEPS = [
   "Uploading your ancient resume...",
@@ -31,6 +33,8 @@ const FormDialog = () => {
     reset,
     formState: { isSubmitting },
   } = useRoastForm();
+  const router = useRouter();
+  const { setResult, setPanelOpen } = useRoastStore.getState();
 
   const onSubmit = async (data: any) => {
     try {
@@ -45,12 +49,17 @@ const FormDialog = () => {
       formData.append("resume", data.resume);
       formData.append("github_username", data.github);
       formData.append("roast_mode", data.roastMode ? "true" : "false");
-      const res = await roastResume(formData);
 
+      console.log("form data is " , formData);
+      const res = await roastResume(formData);
+      setResult(res);
+      setPanelOpen(true); // e.g., show the result panel/modal
+      
       toast.info(SARCASM_STEPS[3]);
       await new Promise(res => setTimeout(res, 1200));
 
       toast.success("Submitted! Let the judgment begin.");
+      router.push("/panel");
     } catch (error) {
       toast.error("Today is not your day! , something went wrong");
     }
