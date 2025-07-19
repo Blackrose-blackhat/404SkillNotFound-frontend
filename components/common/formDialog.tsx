@@ -12,10 +12,10 @@ import {
 import { Button } from "../ui/button";
 import { toast } from "sonner";
 import { Controller } from "react-hook-form";
-import { useRoastForm } from "@/app/hooks/useRoastForm";
+import { useRoastForm } from "@/hooks/useRoastForm";
 import { handleFormErrors } from "@/utils";
 import { ResumeUpload } from "./ResumeUpload";
-import { roastResume } from "@/app/actions/roast";
+import { roastResume } from "@/actions/roast";
 import { useRouter } from "next/navigation";
 import { useRoastStore } from "@/store/roastStore";
 
