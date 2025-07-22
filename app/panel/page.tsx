@@ -16,7 +16,7 @@ const Panel = () => {
 
   if (!result)
     return (
-      <div className="min-h-screen flex items-center justify-center bg-black text-[#E7E9EA] font-sans">
+      <div className="min-h-screen flex items-center justify-center  text-[#E7E9EA] font-sans">
         No result
       </div>
     );
@@ -92,9 +92,9 @@ const Panel = () => {
   }, [result]);
 
   return (
-    <div className="min-h-screen bg-black text-[#E7E9EA] font-sans">
+    <div className="min-h-screen  text-[#E7E9EA] font-sans">
       {/* Fixed Header with Navigation & Share (outside screenshot area) */}
-      <div className="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-[#2F3336]">
+      <div className="sticky top-0 z-50 /90 backdrop-blur-sm border-b border-[#2F3336]">
         <div className="max-w-2xl mx-auto px-4 py-3 flex justify-between items-center">
           {/* Go Back button */}
           <button
@@ -139,7 +139,7 @@ const Panel = () => {
       </div>
 
       {/* Screenshot Area - Everything below will be captured */}
-      <div ref={screenshotRef} className="bg-black">
+      <div ref={screenshotRef} className="">
         {/* Banner */}
         <div className="relative max-w-2xl mx-auto h-52 bg-[#16181C] border-b border-[#2F3336]">
           {/* Profile image overlays banner */}
@@ -181,7 +181,7 @@ const Panel = () => {
 
           {/* Tabs */}
           <Tabs defaultValue="posts" className="mt-2">
-            <TabsList className="flex w-full gap-2 border-b border-[#2F3336] px-1 bg-black rounded-none">
+            <TabsList className="flex w-full gap-2 border-b border-[#2F3336] px-1  rounded-none">
               <TabsTrigger
                 value="posts"
                 className="flex-1 py-3 text-sm font-medium data-[state=active]:border-b-2 data-[state=active]:border-[#1D9BF0] data-[state=active]:text-[#E7E9EA] text-[#71767B] rounded-none"

@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://xcuseshub.vercel.app
+
+# Sitemaps
+Sitemap: https://xcuseshub.vercel.app/sitemap.xml

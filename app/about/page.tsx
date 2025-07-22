@@ -4,28 +4,69 @@ import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-black text-[#E7E9EA] font-sans flex flex-col items-center justify-center px-2 sm:px-4 py-8 sm:py-16">
-      <div className="max-w-lg w-full bg-[#16181C] rounded-2xl shadow-xl p-4 sm:p-8 border border-[#222] flex flex-col items-center">
-        <img
-          src="https://avatars.githubusercontent.com/u/583231?v=4"
-          alt="Creator Avatar"
-          className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-black shadow-lg mb-4"
-        />
-        <h1 className="text-2xl sm:text-3xl font-bold mb-2 text-[#1D9BF0] text-center">About the Creator</h1>
-        <p className="text-base sm:text-lg text-[#E7E9EA] mb-6 text-center">
-          Meet the genius (or at least, that's what their mom says) behind AI Roast Judge.
-        </p>
-        <ul className="text-left text-sm sm:text-base space-y-3 mb-6 w-full max-w-xs sm:max-w-none mx-auto">
-          <li>• Writes code that only sometimes works on the first try.</li>
-          <li>• Believes <span className="text-[#1D9BF0]">console.log</span> is a valid debugging strategy.</li>
-          <li>• Once fixed a bug by turning it off and on again. Twice.</li>
-          <li>• Thinks "AI" stands for "Absolutely Infallible" (it doesn't).</li>
-          <li>• Has more npm packages installed than friends.</li>
-          <li>• Can turn coffee into sarcastic code reviews.</li>
-          <li>• Dreams in dark mode. Nightmares in merge conflicts.</li>
+    <main className="min-h-screen bg-[#101112] text-[#D1D5DB] font-sans flex flex-col items-center justify-center px-4 py-20">
+      <div className="max-w-2xl w-full bg-[#1a1b1e] rounded-2xl shadow-xl border border-[#2A2A2A] p-10 space-y-10 transition-all duration-300 ease-in-out">
+        {/* Avatar & Intro */}
+        <div className="flex flex-col items-center text-center space-y-4">
+          <img
+            src="https://avatars.githubusercontent.com/u/583231?v=4"
+            alt="Creator Avatar"
+            className="w-24 h-24 rounded-full border border-[#2A2A2A] shadow-md"
+          />
+          <h1 className="text-3xl font-semibold text-white">Meet The Genius™</h1>
+          <p className="text-sm text-[#9CA3AF] max-w-md">
+            Creator of this sarcastic masterpiece. Mostly harmless. Somewhat caffeinated. Dubiously qualified.
+          </p>
+        </div>
+
+        {/* Skills */}
+        <ul className="space-y-2 text-sm text-[#B0B3B8] pl-4">
+          {[
+            "🔹 Debugs by vibes and vibes alone.",
+            "🔹 Once built a feature that even surprised them when it worked.",
+            "🔹 Proud advocate of “temporary hacks” since 2018.",
+            "🔹 Thinks TypeScript is a personality trait.",
+            "🔹 Has a PhD in Stack Overflow SEO.",
+            "🔹 Calls it “AI” so they don’t have to call it “guesswork”.",
+          ].map((point, i) => (
+            <li key={i} className="leading-relaxed list-inside list-disc">
+              {point}
+            </li>
+          ))}
         </ul>
-        <Link href="/" className="inline-block mt-2 px-5 sm:px-6 py-2 rounded-full bg-[#1D9BF0] text-black font-semibold hover:bg-[#0a7acb] transition-colors text-sm sm:text-base">Go Home</Link>
+
+        {/* Judge My Skills */}
+        <div className="bg-[#121314] border border-[#2F2F2F] rounded-xl p-5 text-sm text-[#B0B3B8] space-y-3">
+          <h2 className="text-lg font-semibold text-white">Judge My Skills</h2>
+          <p>
+            This project? A digital exhibition of all my questionable design decisions.
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>UI? Tailwind + vibes.</li>
+            <li>Logic? Duct tape + false confidence.</li>
+            <li>Performance? If it loads, it's good enough.</li>
+            <li>Security? Please don’t inspect element.</li>
+          </ul>
+          <p>
+            You’re welcome to roast me — gently — through this project. It’s held together with optimism and caffeine.
+          </p>
+        </div>
+
+        {/* Disclaimer */}
+        <div className="bg-[#121314] border border-[#2F2F2F] rounded-xl p-4 text-xs text-[#6B7280] italic text-center">
+          ⚠️ This page exists to imply the creator knows what they’re doing. Confidence not included.
+        </div>
+
+        {/* CTA */}
+        <div className="flex justify-center">
+          <Link
+            href="/"
+            className="inline-block px-6 py-2 rounded-full bg-[#1D9BF0] text-black font-medium hover:bg-[#0f78c6] transition-colors duration-200"
+          >
+            Escape the Cringe
+          </Link>
+        </div>
       </div>
     </main>
   );
-} 
+}
