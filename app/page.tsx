@@ -1,11 +1,12 @@
 "use client";
 
+import { OrbitalLoader } from "@/components/common/loader";
 import dynamic from "next/dynamic";
 
 // Dynamically import the heavy Hero section (Spline etc.)
 const XcusesHubHero = dynamic(() => import("@/components/common/hero").then(mod => mod.XcusesHubHero), {
   ssr: false, // Prevent server-side render to avoid hydration issues with WebGL
-  loading: () => <div className="text-white text-center py-32">Loading interface...</div>,
+  loading: () => <div className="text-white text-center py-32"><OrbitalLoader /></div>,
 });
 
 export default function Home() {

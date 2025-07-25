@@ -6,7 +6,7 @@ import { Toaster } from "@/components/ui/sonner";
 import Head from "next/head";
 import Navbar from "@/components/common/Navbar"; // 💡 Add your actual navbar path
 import LayoutWrapper from "@/Provider/LayoutWrapper";
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -53,6 +53,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+
       <Head>
         <link rel="canonical" href="https://xcuseshub.vercel.app" />
         <meta name="robots" content="index, follow" />
@@ -68,7 +69,10 @@ export default function RootLayout({
         >
           <Navbar />
           <Toaster />
-          <LayoutWrapper>{children}</LayoutWrapper>{" "}
+          <LayoutWrapper>
+            {children}
+             <SpeedInsights />
+            </LayoutWrapper>{" "}
           {/* 🔥 Conditionally padded */}
         </ThemeProvider>
       </body>

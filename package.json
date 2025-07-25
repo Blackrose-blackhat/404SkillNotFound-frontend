@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-      "postbuild": "next-sitemap"
-    
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -24,12 +23,14 @@
     "@tabler/icons-react": "^3.34.0",
     "@types/d3": "^7.4.3",
     "@types/three": "^0.178.1",
+    "@vercel/speed-insights": "^1.2.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "d3": "^7.9.0",
     "dom-to-image-more": "^3.6.0",
     "framer-motion": "^12.23.6",
     "lucide-react": "^0.525.0",
+    "motion": "^12.23.6",
     "next": "15.3.5",
     "next-sitemap": "^4.2.3",
     "next-themes": "^0.4.6",
