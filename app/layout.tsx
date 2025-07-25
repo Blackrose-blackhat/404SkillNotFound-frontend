@@ -7,6 +7,7 @@ import Head from "next/head";
 import Navbar from "@/components/common/Navbar"; // 💡 Add your actual navbar path
 import LayoutWrapper from "@/Provider/LayoutWrapper";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next"
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
